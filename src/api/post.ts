@@ -7,8 +7,8 @@ export const getPosts = async (userId: number): Promise<Post[]> => {
   return response.data
 }
 
-export const deletePost = async (userId: number): Promise<Post> => {
-  const response = await client.delete(`/posts/${userId}`)
+export const deletePost = async (postId : number): Promise<Post> => {
+  const response = await client.delete(`/posts/${postId }`)
 
   return response.data
 }
@@ -26,7 +26,7 @@ type UpdatePostParams = {
 }
 
 export const createPost = async ({ userId, title, body }: CreatePostParams): Promise<Post> => {
-  const response = await client.post(`/posts/`, { userId, title, body })
+  const response = await client.post(`/posts`, { userId, title, body })
 
   return response.data
 }

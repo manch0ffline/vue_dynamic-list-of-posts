@@ -77,19 +77,10 @@ export default {
   <main class="section" v-if="user">
     <div class="container">
       <div class="tile is-ancestor">
-        <PostList
-          :user="user"
-          v-model:postModel="activePost"
-          v-model:postsModel="posts"
-          v-model:newPostModel="newPost"
-        />
-        <AppSidebar
-          v-model:postsModel="posts"
-          :user="user"
-          v-model:postModel="activePost"
-          v-model:newPostModel="newPost"
-          v-model:isEditing="isEditingPost"
-        />
+        <PostList :user="user" v-model:postModel="activePost" v-model:postsModel="posts"
+          v-model:newPostModel="newPost" />
+        <AppSidebar v-model:postsModel="posts" :user="user" v-model:postModel="activePost"
+          v-model:newPostModel="newPost" v-model:isEditing="isEditingPost" />
       </div>
     </div>
   </main>
